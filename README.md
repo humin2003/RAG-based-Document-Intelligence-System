@@ -39,10 +39,10 @@ streamlit run pdfquery.py
 
 ## Usage
 
-Open the local Streamlit URL provided in the terminal.
+* Open the local Streamlit URL provided in the terminal.
 
-Upload one or more PDF documents using the sidebar.
+* Upload one or more PDF documents using the sidebar.
 
-Click "Xử lý dữ liệu" (Process Data) to build the vector index.
+* Click "Xử lý dữ liệu" (Process Data) to build the vector index.
 
-Start chatting with your documents!
+* Start chatting with your documents!
