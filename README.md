@@ -1,48 +1,47 @@
-# RAG-based Document Intelligence System
+# Hệ thống xử lý Tài liệu dựa trên RAG (RAG-based Document Intelligence System)
 
-An intelligent conversational agent built to extract, process, and answer questions from PDF documents using Retrieval-Augmented Generation (RAG) architecture. 
+Một trợ lý ảo thông minh được xây dựng để trích xuất, xử lý và trả lời câu hỏi từ các tài liệu PDF bằng kiến trúc RAG (Retrieval-Augmented Generation). 
 
-This project allows users to seamlessly upload multiple PDF files and interact with their content through a chat interface, ensuring accurate and context-aware responses without hallucination.
+Dự án này cho phép người dùng tải lên nhiều file PDF cùng lúc và tương tác với nội dung bên trong thông qua giao diện chat, đảm bảo câu trả lời chính xác, sát ngữ cảnh và không bịa đặt thông tin (hallucination).
 
-## Key Features
-* **Multi-PDF Processing:** Extract text from multiple PDF documents simultaneously.
-* **Smart Text Chunking:** Utilizes LangChain's `RecursiveCharacterTextSplitter` to divide large documents into meaningful, overlapping chunks for optimal context retrieval.
-* **Vector Embeddings & Storage:** Generates high-quality vector embeddings using Google Generative AI and stores them locally using FAISS for rapid similarity search.
-* **Conversational AI:** Powered by Google Gemini Flash models to deliver precise answers based strictly on the provided document context.
-* **Interactive UI:** A user-friendly, ChatGPT-like chat interface built with Streamlit.
+## Tính năng chính
+* **Xử lý nhiều file PDF:** Trích xuất văn bản từ nhiều tài liệu PDF cùng lúc.
+* **Phân chia văn bản thông minh:** Sử dụng `RecursiveCharacterTextSplitter` của LangChain để chia các tài liệu lớn thành các đoạn văn bản có nghĩa, có độ gối đầu (overlap) để tối ưu hóa việc truy xuất ngữ cảnh.
+* **Nhúng và lưu trữ Vector:** Tạo các vector nhúng (embeddings) chất lượng cao bằng Google Generative AI và lưu trữ cục bộ bằng FAISS để tìm kiếm độ tương đồng nhanh chóng.
+* **Trí tuệ nhân tạo đàm thoại:** Sử dụng sức mạnh của các model Google Gemini Flash để đưa ra câu trả lời chính xác dựa hoàn toàn vào ngữ cảnh tài liệu được cung cấp.
+* **Giao diện tương tác:** Giao diện chat thân thiện với người dùng, tương tự ChatGPT, được xây dựng bằng Streamlit.
 
-## Technology Stack
-* **Language:** Python
+## Công nghệ sử dụng
+* **Ngôn ngữ:** Python
 * **LLM & Embeddings:** Google Gemini API (gemini-1.5-flash / gemini-2.0-flash)
 * **Framework:** LangChain
-* **Vector Database:** FAISS (Facebook AI Similarity Search)
+* **Cơ sở dữ liệu Vector:** FAISS (Facebook AI Similarity Search)
 * **Frontend:** Streamlit
-* **Document Processing:** PyPDF2
+* **Xử lý tài liệu:** PyPDF2
 
-## How to Run Locally
+## Hướng dẫn cài đặt và chạy cục bộ
 
-**1. Clone the repository**
+**1. Clone repository về máy**
 git clone [https://github.com/humin2003/RAG-based-Document-Intelligence-System.git](https://github.com/humin2003/RAG-based-Document-Intelligence-System.git)
 cd RAG-based-Document-Intelligence-System
 
-**2. Create a virtual environment & Install dependencies**
+**2. Tạo môi trường ảo và cài đặt thư viện**
 python -m venv venv
-source venv/bin/activate  # On Windows use: venv\Scripts\activate
+source venv/bin/activate  # Trên Windows sử dụng: venv\Scripts\activate
 pip install -r requirements.txt
 
-**3. Set up environment variables**
-Create a .env file in the root directory and add your Google API Key:
-GOOGLE_API_KEY="your_api_key_here"
+**3. Thiết lập biến môi trường**
+Tạo một file .env ở thư mục gốc và thêm Google API Key của bạn vào:
+GOOGLE_API_KEY="dien_api_key_cua_ban_vao_day"
 
-**4. Run the application**
+**4. Chạy ứng dụng**
 streamlit run pdfquery.py
 
-## Usage
+## Hướng dẫn sử dụng
+* Mở đường link Streamlit cục bộ hiển thị trên terminal.
 
-* Open the local Streamlit URL provided in the terminal.
+* Tải lên một hoặc nhiều tài liệu PDF ở thanh công cụ bên trái.
 
-* Upload one or more PDF documents using the sidebar.
+* Bấm "Xử lý dữ liệu" để hệ thống xây dựng cơ sở dữ liệu vector.
 
-* Click "Xử lý dữ liệu" (Process Data) to build the vector index.
-
-* Start chatting with your documents!
+* Bắt đầu trò chuyện và đặt câu hỏi về tài liệu của bạn!
